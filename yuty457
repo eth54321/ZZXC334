@@ -1,0 +1,29 @@
+from pathlib import Path
+
+from setuptools import setup, find_packages
+
+
+NAME = 'audiocraft'
+DESCRIPTION = 'Audio research library for PyTorch'
+
+URL = 'https://github.com/fairinternal/audiocraft'
+AUTHOR = 'FAIR Speech & Audio'
+EMAIL = 'defossez@meta.com'
+REQUIRES_PYTHON = '>=3.8.0'
+
+for line in open('audiocraft/__init__.py'):
+    line = line.strip()
+    if '__version__' in line:
+        context = {}
+        exec(line, context)
+        VERSION = context['__version__']
+
+HERE = Path(__file__).parent
+
+try:
+    with open(HERE / "README.md", encoding='utf-8') as f:
+        long_description = '\n' + f.read()
+except FileNotFoundError:
+    long_description = DESCRIPTION
+
+REQUIRED = [i.strip() for i in open(HERE / 'requirements.txt') if not i.startswith('#')]
