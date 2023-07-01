@@ -26,4 +26,4 @@ try:
 except FileNotFoundError:
     long_description = DESCRIPTION
 
-REQUIRED = [i.strip() for i in open(HERE / 'requirements.txt') if not i.startswith('#')]
+
