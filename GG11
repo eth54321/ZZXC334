@@ -10,4 +10,4 @@ def plot_digits(X, title):
     for img, ax in zip(X, axs.ravel()):
         ax.imshow(img.reshape((16, 16)), cmap="Greys")
         ax.axis("off")
-    fig.suptitle(title, fontsize=24)
+
